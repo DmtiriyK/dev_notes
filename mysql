@@ -1,0 +1,6 @@
+# SELECT с WHERE
+
+```sql
+SELECT * FROM users WHERE age > 18;
+
+
