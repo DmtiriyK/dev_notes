@@ -1,0 +1,14 @@
+## 🔁 CTE — Common Table Expressions (WITH)
+
+Синтаксис                               | Функционал
+========================================|====================================================
+WITH temp AS (SELECT ...)              | Создание временной таблицы для повторного использования
+
+🔸 Пример:
+```sql
+WITH top_customers AS (
+    SELECT customer_id, COUNT(*) as orders
+    FROM orders
+    GROUP BY customer_id
+)
+SELECT * FROM top_customers WHERE orders > 5;
