@@ -1,0 +1,71 @@
+# ------------------------------------------
+# 🔤 STRING OPERATIONS — SLICE, REVERSE, COUNT
+# ------------------------------------------
+
+
+# 🔹 Task 1: Unicode & ASCII Check
+# ----------------------------------
+# Ask the user for a character and print its Unicode code point.
+# Also check whether it's an ASCII character (code 0–127).
+
+sim = input("Enter a single character: ")
+print("Unicode code:", ord(sim))
+print("Is ASCII:", bool(0 <= ord(sim) <= 127))  # 🧠 ASCII range: 0–127
+
+
+# 🔹 Task 2: Substring with Padding
+# ----------------------------------
+# Ask for a string and start/end indices.
+# If the end index is out of bounds, pad the result with underscores (_).
+
+string = input("Enter a string: ")
+start_index = int(input("Enter start index: "))
+end_index = int(input("Enter end index: "))
+
+if start_index < 0:
+    start_index = 0  # 🧠 Prevent negative index issues
+
+string_length = len(string)
+missing_chars = 0
+
+# 🧠 If end index is too big, count how many symbols are missing
+if end_index > string_length:
+    missing_chars = end_index - string_length
+    end_index = string_length
+
+substring = string[start_index:end_index]
+
+# 🧠 Fill in missing space with underscores
+if missing_chars > 0:
+    substring += '_' * missing_chars
+
+print("Result:", substring)
+
+
+# 🔹 Task 3: Count Character Occurrence
+# --------------------------------------
+# Ask the user for a string and a character.
+# Print how many times the character appears in the string.
+
+stroka = input("Enter a string: ")
+znak = input("Enter a character to count: ")
+count = stroka.count(znak)
+
+print("Character appears:", count, "time(s)")
+
+
+# 🔹 Task 4: Reverse String Without Digits
+# -----------------------------------------
+# Reverse a string input by the user,
+# but skip all numeric characters (0–9).
+
+input_string = input("Enter a string with letters and digits: ")
+
+# 🧠 Remove all digits using replace
+for digit in '0123456789':
+    input_string = input_string.replace(digit, '')
+
+# 🧠 Reverse the string using slicing
+reversed_string = input_string[::-1]
+
+print("Result:", reversed_string)

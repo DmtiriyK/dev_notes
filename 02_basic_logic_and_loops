@@ -1,0 +1,72 @@
+# -------------------------------
+# 🔁 BASIC LOGIC & LOOPS PRACTICE
+# -------------------------------
+
+
+# 🔹 Task 1: Sum of Digits
+# -------------------------
+# Ask the user to enter a number.
+# The program calculates and prints the sum of all its digits.
+#
+# Example:
+# Input: 12345 → Output: 15
+
+num = input("Enter a number: ")
+total = 0
+
+# 🧠 Loop through each character in the string
+for digit in num:
+    total += int(digit)  # Convert to int and add to the total
+
+print("Sum of digits:", total)
+
+
+# 🔹 Task 2: Palindrome Checker
+# ------------------------------
+# Ask the user to input a number.
+# The program checks whether it's a palindrome.
+#
+# Example:
+# 12321 → is a palindrome
+# 1234 → is NOT a palindrome
+
+num = input("Enter a number: ")
+num2 = num[::-1]  # 🧠 Reversed string
+
+if num == num2:
+    print("The number", num, "is a palindrome.")
+else:
+    print("The number", num, "is NOT a palindrome.")
+
+
+# 🔹 Task 3: Guess the Number Game
+# ---------------------------------
+# Generate a random number from 1 to 100.
+# Give the user up to 10 attempts to guess the number.
+# Provide hints: "higher" or "lower".
+# Congratulate the user if guessed correctly.
+
+import random
+
+attempts = 0
+secret = random.randint(1, 100)
+
+print("Guess the number between 1 and 100. You have 10 attempts.")
+guess = int(input("Your guess: "))
+
+while guess != secret:
+    if attempts >= 9:
+        print("No more attempts! The number was:", secret)
+        break
+
+    attempts += 1
+
+    if guess > secret:
+        print("The number is smaller.")
+    else:
+        print("The number is greater.")
+
+    guess = int(input("Try again: "))
+else:
+    print("Congratulations! You guessed the number:", secret)
+    print("Attempts used:", attempts + 1)

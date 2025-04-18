@@ -1,0 +1,43 @@
+# --------------------------------------
+# 🔁 LOOPS & STRING CLEANING TASKS
+# --------------------------------------
+
+
+# 🔹 Task 1: Multiplication Table
+# --------------------------------
+# Input a number n.
+# Print a multiplication table from 1 to n with aligned columns.
+
+zahl = int(input("Enter a number for the multiplication table: "))
+
+for i in range(1, zahl + 1):
+    for j in range(1, zahl + 1):
+        # 🧠 Format output so each cell takes up at least 2 characters
+        print(f"{i * j:2}", end=' ')
+    print()  # 🧠 Move to the next line after inner loop
+
+
+# 🔹 Task 2: Number Staircase
+# -----------------------------
+# Print a number pyramid from 1 up to n.
+
+n = int(input("Enter a number for the staircase: "))
+
+for a in range(1, n + 1):
+    for b in range(1, a + 1):
+        print(b, end=' ')  # 🧠 Print from 1 up to current line number
+    print()  # 🧠 Newline after each row
+
+
+# 🔹 Task 3: Remove Duplicate Characters
+# ---------------------------------------
+# Input a string and remove all duplicate characters
+# while keeping only their first occurrence.
+
+stroka = input("Enter a string to clean from duplicates: ")
+a = []  # 🧠 Storage for already seen characters
+
+for char in stroka:
+    if char not in a:
+        print(char, end='')  # 🧠 Print if not seen before
+        a.append(char)

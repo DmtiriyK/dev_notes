@@ -1,0 +1,40 @@
+# ---------------------------------------------
+# 💰 MINIMUM COINS & LIST TRANSFORMATION
+# ---------------------------------------------
+
+
+# 🔹 Task 1: Vending Machine — Minimum Coins
+# -------------------------------------------
+# Ask the user to input the total cost of an item.
+# Then calculate and display the minimum number of coins
+# (from denominations 50, 10, 5, 2, 1) needed to pay the amount.
+
+kost = int(input("Enter the cost of the item: "))
+nom = [50, 10, 5, 2, 1]
+
+for a in nom:
+    count = 0
+    # 🧠 While the cost is still >= coin value, subtract and count
+    while kost >= a:
+        count += 1
+        kost -= a
+    if count > 0:
+        print("Insert coin of", a, "value:", count, "times")
+
+
+# 🔹 Task 2: Square Only Odd Numbers in List
+# -------------------------------------------
+# Given a list of numbers, square only the odd numbers.
+# Even numbers should remain unchanged.
+
+numbers = [4, 9, 1, 7, 2, 5, 0, 3, 7, 1, 3]
+numbers2 = []
+
+for a in numbers:
+    # 🧠 Check if the number is even
+    if a % 2 == 0:
+        numbers2.append(a)       # 🧠 Even stays the same
+    else:
+        numbers2.append(a ** 2)  # 🧠 Odd gets squared
+
+print("Transformed list:", numbers2)

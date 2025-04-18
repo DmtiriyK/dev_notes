@@ -1,0 +1,46 @@
+# 🔹 Task 1: Sum of Positive Floats (Currency Format)
+# ---------------------------------------------------
+# Given a list of float numbers, sum only the positive ones
+# Then format the result to:
+# - 2 decimal places
+# - thousand separators
+# - dollar sign in front
+
+numbers = [1245.4435, -302.1403, 87459.99, -520.8265, 1450.001]
+summ = 0
+
+for a in numbers:
+    if a > 0:
+        summ += a  # 🧠 Only sum positives
+
+summ = round(summ, 2)       # ➤ Round to 2 decimal places
+summ = f'{summ:,}'          # ➤ Add commas as thousands separators
+print('$', summ, sep='')    # ➤ Output: $90,155.43
+
+
+# 🔹 Task 2: Format Client Info Nicely
+# -------------------------------------
+# Each line has "name age balance"
+# Format output as:
+# Name: {name:10} | Age: {age:3} | Balance: {balance:10.2f}
+
+data_list = [
+    "John 23 12345.678",
+    "Alice 30 200.50",
+    "Bob 35 15000.3",
+    "Charlie 40 500.75"
+]
+
+for a in data_list:
+    name, age, balance = a.split()
+    age = int(age)
+    balance = round(float(balance), 2)
+
+    # 🧠 Format values into fixed-width fields
+    formatted = f'Name: {name:<10} | Age: {age:<3} | Balance: {balance:>10.2f}'
+    print(formatted)
+
+# ➤ Output:
+# Name: John       | Age: 23  | Balance:  12345.68
+# Name: Alice      | Age: 30  | Balance:    200.50
+# ...

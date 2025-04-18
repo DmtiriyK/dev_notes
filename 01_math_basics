@@ -1,0 +1,37 @@
+# -------------------------------
+# 🧮 MATH BASICS PRACTICE
+# -------------------------------
+
+# 🔹 Task 1: School-style Rounding
+# ---------------------------------
+# Input a floating-point number and round it to the nearest integer
+# using school rules (e.g., 2.5 → 3, -2.5 → -3), not banker's rounding.
+
+zahl = float(input("Enter a floating-point number: "))
+# 🧠 We store the integer part of the number
+zahl2 = int(zahl)
+
+# 🧠 If the decimal part is 0.5 or more → round up
+if zahl - zahl2 >= 0.5:
+    print("Rounded value:", zahl2 + 1)
+# 🧠 If the decimal part is ≤ -0.5 → round down
+elif zahl - zahl2 <= -0.5:
+    print("Rounded value:", zahl2 - 1)
+# 🧠 Otherwise → keep the integer part
+else:
+    print("Rounded value:", zahl2)
+
+
+# 🔹 Task 2: Hypotenuse of a Right Triangle
+# -----------------------------------------
+# Input the lengths of the two legs and calculate the hypotenuse
+# using the Pythagorean theorem: √(a² + b²)
+
+import math
+
+kat1 = int(input("Enter the length of the first leg: "))
+kat2 = int(input("Enter the length of the second leg: "))
+# 🧠 Apply Pythagoras: hypotenuse = √(kat1² + kat2²)
+gep = math.sqrt(kat1**2 + kat2**2)
+
+print("Length of the hypotenuse:", gep)

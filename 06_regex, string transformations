@@ -1,0 +1,52 @@
+# 🔹 Task 1: Replace Digits with Asterisks
+# ---------------------------------------------
+# Replace all digits in a string with '*'
+
+text = "My number is 123-456-789"
+liste = []
+
+for a in text:
+    if a.isdigit():
+        a = '*'
+        liste.append(a)  # 🧠 Replace digits
+    else:
+        liste.append(a)  # 🧠 Keep everything else
+
+text = ''.join(liste)
+print(text)  # ➤ Output: My number is ***-***-***
+
+
+# 🔹 Task 2: Count Repeated Characters (Case-Insensitive)
+# --------------------------------------------------------
+# Count all characters that appear more than once, ignoring case.
+# Show each repeated character only once.
+
+text = "Programming in python"
+texts = text.lower()
+lis = []
+
+for a in texts:
+    if a not in lis:
+        lis.append(a)
+        if texts.count(a) > 1:
+            print(f'Character "{a}" appears {texts.count(a)} time(s)')
+            # 🧠 Count and print only once per repeated char
+
+
+# 🔹 Task 3: Multiply Numbers by 10 (Smart Matching)
+# ---------------------------------------------------
+# Replace numbers in text with value * 10
+# Only affect standalone numbers up to 3 digits.
+
+import re 
+
+text = "I have 5 apples and 10 oranges, price is 0.5 each. Card number is ....3672."
+
+def new(match):
+    number = float(match.group())
+    return str(number * 10)  # 🧠 Convert match to float and multiply
+
+pattern = r'\b\d{1,3}(?:\.\d+)?\b'
+rez = re.sub(pattern, new, text)
+
+print(rez)  # ➤ Expected output: ... apples and 100.0 oranges ... but 3672 stays
